@@ -1,0 +1,106 @@
+:root {
+   --primaryColor: #a0e870;
+   --secondaryColor:rgb(31, 31, 31);
+   --fontColor:white;
+}
+
+.light-theme {
+  
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.container{
+    display: flex;
+}
+header{
+width: 15%;
+background-color: var(--secondaryColor);
+display: flex;
+flex-direction: column;
+padding: 20px;
+border-right: solid 1px white;
+}
+.logo-wrapper{
+    display: flex;
+    align-items: center;
+}
+.logo-wrapper img{
+    width: 20%;
+}
+.logo-wrapper h1{
+    font-size: 23px;
+    color: var(--fontColor);
+}
+.header-top hr{
+    margin: 20px 0;
+}
+.header-mid{
+    display: flex;
+}
+article{
+    display: flex;
+    align-items: center;
+    width: 150%;
+    height: 40px;
+    background-color: pink;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--secondaryColor);
+    cursor: pointer;
+    margin: 10px 0;
+}
+article h2{
+    font-size: 13px;
+    margin: 0 10px;
+    color: var(--fontColor);
+}
+.svg-box{
+    width: 35px;
+    height: 35px;
+    background-color: rgb(63, 63, 63);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+}
+.hover-svg{
+    display: none;
+}
+.main-svg-box{
+    display: flex;
+}
+article:hover{
+    background-color: rgb(63, 63, 63);
+    transition: 0.3s ease-in-out;
+    
+    .svg-box{
+    background-color: var(--primaryColor);
+    transition: 0.3s ease-in-out;
+    }
+    .hover-svg {
+        display: flex;
+        transition: 0.3s ease-in-out;
+    }
+    .main-svg-box {
+        display: none;
+        transition: 0.3s ease-in-out;
+    }
+}
+main{
+    width: 100%;
+    background-color: var(--secondaryColor);
+    color: white;
+}
+.parent {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
+.div1 { grid-area: 1 / 4 / 2 / 5; }
