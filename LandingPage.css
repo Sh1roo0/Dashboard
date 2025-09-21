@@ -2,6 +2,7 @@
    --primaryColor: #a0e870;
    --secondaryColor:rgb(31, 31, 31);
    --fontColor:white;
+   --headerColor:rgb(24, 24, 24);
 }
 
 .light-theme {
@@ -15,14 +16,16 @@
 }
 .container{
     display: flex;
+    background-color: var(--secondaryColor);
+    height: 100vh;
 }
 header{
-width: 15%;
-background-color: var(--secondaryColor);
+width: 20%;
 display: flex;
 flex-direction: column;
 padding: 20px;
-border-right: solid 1px white;
+box-shadow: 0px 0px 20px 0px black;
+background-color:var(--headerColor);
 }
 .logo-wrapper{
     display: flex;
@@ -44,7 +47,7 @@ border-right: solid 1px white;
 article{
     display: flex;
     align-items: center;
-    width: 150%;
+    width: 100%;
     height: 40px;
     background-color: pink;
     padding: 10px;
@@ -92,15 +95,159 @@ article:hover{
 }
 main{
     width: 100%;
-    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.main-top{
+    display: grid;
+    height: 100px;
+    grid-template-columns: 1fr 1fr ;
+    width: 100%;
+}
+.top1{
+    display: flex;
+    flex-direction: column;
     color: white;
+    padding: 30px;
+}
+.top1 p{
+    font-size: 12px;
+}
+.top1 span{
+    color: rgb(134, 134, 134);
+}
+.top1 h3{
+    font-size: 15px;
+    margin: 10px 0;
+}
+.top2{
+    display: flex;
+    align-items: center;
+    color: white;
+    color: rgb(134, 134, 134);
+    justify-content: end;
+}
+.top2 input{
+    width: 35%;
+    height: 40px;
+    border: rgb(134, 134, 134) solid 1px;
+    border-radius: 10px;
+    background-color: rgb(43, 43, 43);
+}
+.login-wrapper{
+    display: flex;
+    margin:  10px;
+    cursor: pointer;
+}
+.top2 svg{
+    margin: 0 5px;
+    cursor: pointer;
+}
+.main-rest{
+    width: 90%;
+    height: 100%;
+    position: relative;
+    left: 5%;
 }
 .parent {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-template-rows: repeat(5, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px;
-}
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.5fr 2fr 3fr;
+    grid-column-gap: 40px;
+    grid-row-gap: 20px;
+    height: 100%;
+    }
+    
+    .div1 { grid-area: 1 / 1 / 2 / 2; }
+    .div2 { grid-area: 1 / 2 / 2 / 3; }
+    .div3 { grid-area: 1 / 3 / 2 / 4; }
+    .div4 { grid-area: 2 / 1 / 3 / 3; }
+    .div5 { grid-area: 2 / 3 / 3 / 4; }
+    .div6 { grid-area: 3 / 1 / 4 / 4; }
 
-.div1 { grid-area: 1 / 4 / 2 / 5; }
+.parent div{
+    border-radius: 10px;
+    background-color: var(--headerColor);
+    color: white;
+}
+.div1{
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-around;
+}
+.div1 p{
+    color: rgb(134, 134, 134);
+}
+.scale{
+    width: 40px;
+    height: 40px;
+    background-color: var(--primaryColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.weightVariables{
+    display: flex;
+    align-items: center;
+}
+.weightVariables span{
+    margin: 0 10px;
+}
+.div2{
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-around;
+}
+.div2 p{
+    color: rgb(134, 134, 134);
+}
+.div3{
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-around;
+}
+.div3 p{
+    color: rgb(134, 134, 134);
+}
+.div1 input{
+    width: 70%;
+    border-radius: 10px;
+    height: 25px;
+    margin: 5px 0;
+    background-color: rgb(43, 43, 43);
+    border: solid 1px rgb(134, 134, 134);
+    padding: 5px;
+}
+.div2 input{
+    width: 70%;
+    border-radius: 10px;
+    height: 25px;
+    margin: 5px 0;
+    background-color: rgb(43, 43, 43);
+    border: solid 1px rgb(134, 134, 134);
+    padding: 5px;
+}
+.div3 input{
+    width: 70%;
+    border-radius: 10px;
+    height: 25px;
+    margin: 5px 0;
+    background-color: rgb(43, 43, 43);
+    border: solid 1px rgb(134, 134, 134);
+    padding: 5px;
+}
+@media (max-width:870px){
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    header{
+        width: 100%;
+        display: flex;
+        border-bottom: solid 1px white;
+    }
+}
