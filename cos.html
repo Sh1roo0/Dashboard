@@ -1,37 +1,72 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Waga</title>
+  <title>BMI Calculator</title>
+  <style>
+    body { background: #1c1c1c; color: white; font-family: sans-serif; text-align: center; }
+    .input-container { margin: 20px; }
+    input { padding: 5px; width: 100px; text-align: center; }
+    .label { margin-top: 5px; }
+    #bmiResult { font-size: 24px; margin: 20px 0; }
+  </style>
 </head>
-<body style="background: #1e1e1e; color: white; font-family: sans-serif;">
+<body>
 
-  <div>
-    <label for="weightInput">Your weight:</label>
-    <input type="number" id="weightInput" placeholder="your weight">
-    <button onclick="saveWeight()">Zapisz</button>
+  <div class="input-container">
+    <label>Today's weight (kg):</label><br>
+    <input type="text" id="weightInput" placeholder="np. 60"><br>
+    <div class="label" id="weightDisplay">–</div>
   </div>
 
-  <p>Aktualna waga w tablicy: <span id="currentWeight">Brak</span></p>
+  <div class="input-container">
+    <label>Today's height (m):</label><br>
+    <input type="text" id="heightInput" placeholder="np. 1.74"><br>
+    <div class="label" id="heightDisplay">–</div>
+  </div>
+
+  <div>
+    <h2>Your BMI</h2>
+    <div id="bmiResult">–</div>
+  </div>
 
   <script>
-    let weightArray = [];
+    const weightInput = document.getElementById('weightInput');
+    const heightInput = document.getElementById('heightInput');
+    const weightDisplay = document.getElementById('weightDisplay');
+    const heightDisplay = document.getElementById('heightDisplay');
+    const bmiResult = document.getElementById('bmiResult');
 
-    function saveWeight() {
-      const input = document.getElementById("weightInput").value;
-      const weight = parseFloat(input);
+    function calculateBMI() {
+      // Zamień przecinki na kropki (jeśli wpisano "1,74")
+      const weight = parseFloat(weightInput.value.replace(',', '.'));
+      const height = parseFloat(heightInput.value.replace(',', '.'));
 
+      // Wyświetl aktualne wartości pod inputami
       if (!isNaN(weight)) {
-        // Nadpisz tablicę nową wartością
-        weightArray[0] = weight;
-
-        // Aktualizuj widok
-        document.getElementById("currentWeight").textContent = weightArray[0] + " kg";
-        console.log("Aktualna tablica:", weightArray);
+        weightDisplay.textContent = `${weight} kg`;
       } else {
-        alert("Wprowadź prawidłową liczbę.");
+        weightDisplay.textContent = "–";
+      }
+
+      if (!isNaN(height)) {
+        heightDisplay.textContent = `${height} m`;
+      } else {
+        heightDisplay.textContent = "–";
+      }
+
+      // Oblicz BMI tylko jeśli dane są poprawne
+      if (!isNaN(weight) && !isNaN(height) && height > 0) {
+        const bmi = weight / (height * height);
+        bmiResult.textContent = bmi.toFixed(2);
+      } else {
+        bmiResult.textContent = "NaN";
       }
     }
+
+    // Obliczaj BMI i aktualizuj dane przy każdej zmianie
+    weightInput.addEventListener('input', calculateBMI);
+    heightInput.addEventListener('input', calculateBMI);
   </script>
 
 </body>
