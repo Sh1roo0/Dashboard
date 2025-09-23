@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Waga</title>
+</head>
+<body style="background: #1e1e1e; color: white; font-family: sans-serif;">
+
+  <div>
+    <label for="weightInput">Your weight:</label>
+    <input type="number" id="weightInput" placeholder="your weight">
+    <button onclick="saveWeight()">Zapisz</button>
+  </div>
+
+  <p>Aktualna waga w tablicy: <span id="currentWeight">Brak</span></p>
+
+  <script>
+    let weightArray = [];
+
+    function saveWeight() {
+      const input = document.getElementById("weightInput").value;
+      const weight = parseFloat(input);
+
+      if (!isNaN(weight)) {
+        // Nadpisz tablicę nową wartością
+        weightArray[0] = weight;
+
+        // Aktualizuj widok
+        document.getElementById("currentWeight").textContent = weightArray[0] + " kg";
+        console.log("Aktualna tablica:", weightArray);
+      } else {
+        alert("Wprowadź prawidłową liczbę.");
+      }
+    }
+  </script>
+
+</body>
+</html>

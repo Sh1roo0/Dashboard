@@ -99,6 +99,9 @@ main{
     flex-direction: column;
     height: 100%;
 }
+main input{
+    color: white;
+}
 .main-top{
     display: grid;
     height: 100px;
