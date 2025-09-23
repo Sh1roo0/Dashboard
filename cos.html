@@ -1,34 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    .charts{
-    display: flex;
-    place-content: center;
-    flex-flow: wrap;
-    gap: 2rem;
-}
-.pie{
-    flex:1 0 225px;
-    max-width: 325px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background-image:
-    conic-gradient(
-    #a0e870  40%,
-    #459818 0 60% ,
-    #2a4e19 0 85%,
-    #e1f8cf 0  
-    );
-}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    
 </head>
 <body>
-  <figure class="charts">
-                        <div class="pie"></div>
-                    </figure>
+    <input type="text" placeholder="jak sie nazywasz">
+    <input type="email" placeholder="podaj email">
+    <input type="password" id="pass1" placeholder="podaj haslo">
+    <input type="password" id="pass2" placeholder="powtorz haslo">
+    <button onclick="check()">login</button>
+    <script>
+         var pass1 = document.getElementById("pass1");
+         var pass2 = document.getElementById("pass2");
+         function check() {
+            
+         }
+    </script>
 </body>
 </html>
