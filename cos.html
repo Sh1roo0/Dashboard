@@ -2,72 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>BMI Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
   <style>
-    body { background: #1c1c1c; color: white; font-family: sans-serif; text-align: center; }
-    .input-container { margin: 20px; }
-    input { padding: 5px; width: 100px; text-align: center; }
-    .label { margin-top: 5px; }
-    #bmiResult { font-size: 24px; margin: 20px 0; }
+    .charts{
+    display: flex;
+    place-content: center;
+    flex-flow: wrap;
+    gap: 2rem;
+}
+.pie{
+    flex:1 0 225px;
+    max-width: 325px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-image:
+    conic-gradient(
+    #a0e870  40%,
+    #459818 0 60% ,
+    #2a4e19 0 85%,
+    #e1f8cf 0  
+    );
+}
   </style>
 </head>
 <body>
-
-  <div class="input-container">
-    <label>Today's weight (kg):</label><br>
-    <input type="text" id="weightInput" placeholder="np. 60"><br>
-    <div class="label" id="weightDisplay">–</div>
-  </div>
-
-  <div class="input-container">
-    <label>Today's height (m):</label><br>
-    <input type="text" id="heightInput" placeholder="np. 1.74"><br>
-    <div class="label" id="heightDisplay">–</div>
-  </div>
-
-  <div>
-    <h2>Your BMI</h2>
-    <div id="bmiResult">–</div>
-  </div>
-
-  <script>
-    const weightInput = document.getElementById('weightInput');
-    const heightInput = document.getElementById('heightInput');
-    const weightDisplay = document.getElementById('weightDisplay');
-    const heightDisplay = document.getElementById('heightDisplay');
-    const bmiResult = document.getElementById('bmiResult');
-
-    function calculateBMI() {
-      // Zamień przecinki na kropki (jeśli wpisano "1,74")
-      const weight = parseFloat(weightInput.value.replace(',', '.'));
-      const height = parseFloat(heightInput.value.replace(',', '.'));
-
-      // Wyświetl aktualne wartości pod inputami
-      if (!isNaN(weight)) {
-        weightDisplay.textContent = `${weight} kg`;
-      } else {
-        weightDisplay.textContent = "–";
-      }
-
-      if (!isNaN(height)) {
-        heightDisplay.textContent = `${height} m`;
-      } else {
-        heightDisplay.textContent = "–";
-      }
-
-      // Oblicz BMI tylko jeśli dane są poprawne
-      if (!isNaN(weight) && !isNaN(height) && height > 0) {
-        const bmi = weight / (height * height);
-        bmiResult.textContent = bmi.toFixed(2);
-      } else {
-        bmiResult.textContent = "NaN";
-      }
-    }
-
-    // Obliczaj BMI i aktualizuj dane przy każdej zmianie
-    weightInput.addEventListener('input', calculateBMI);
-    heightInput.addEventListener('input', calculateBMI);
-  </script>
-
+  <figure class="charts">
+                        <div class="pie"></div>
+                    </figure>
 </body>
 </html>

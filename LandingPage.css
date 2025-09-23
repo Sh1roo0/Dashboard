@@ -170,7 +170,6 @@ main input{
     .div6 { grid-area: 3 / 1 / 4 / 4; }
 
 .parent div{
-    border-radius: 10px;
     background-color: var(--headerColor);
     color: white;
 }
@@ -178,65 +177,86 @@ main input{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.div1 section{
- display: flex;
- justify-content: center;
- flex-direction: column;
- align-items: center;   
-}
-.div1 p{
-    font-size: 20px;
-}
-.div2{
-    display: flex;
-    align-items: center;
-    color: white;
-    justify-content: space-around;
-}
-.div2 p{
-    color: rgb(134, 134, 134);
-}
-.div3{
-    display: flex;
-    align-items: center;
-    color: white;
-    justify-content: space-around;
-}
-.div3 p{
-    color: rgb(134, 134, 134);
+    flex-direction: column;
+    border-radius: 10px;
 }
 .div1 input{
     width: 70%;
     border-radius: 10px;
-    height: 25px;
-    margin: 5px 0;
-    background-color: rgb(43, 43, 43);
-    border: solid 1px rgb(134, 134, 134);
-    padding: 5px;
+    border: 2px solid #a0e870;
+    padding: 10px;
+    background-color: var(--headerColor);
+    color: white;
+}
+.div1 p{
+    font-size: 20px;
+}   
+.scale{
+width: 70%;
+background-color: #a0e870;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px;
+
+}
+.div2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
 }
 .div2 input{
-    width: 70%;
+      width: 70%;
     border-radius: 10px;
-    height: 25px;
-    margin: 5px 0;
-    background-color: rgb(43, 43, 43);
-    border: solid 1px rgb(134, 134, 134);
-    padding: 5px;
+    border: 2px solid #a0e870;
+    padding: 10px;
+    background-color: var(--headerColor);
+    color: white;
+}
+.div2 p{
+    font-size: 20px;
+}   
+.div3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.input-wrapper{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .div3 input{
-    width: 70%;
+    width: 40%;
     border-radius: 10px;
-    height: 25px;
-    margin: 5px 0;
-    background-color: rgb(43, 43, 43);
-    border: solid 1px rgb(134, 134, 134);
+    border: 2px solid #a0e870;
     padding: 5px;
+    background-color: var(--headerColor);
+    color: white;
+    margin: 5px;
+}
+.div3 p{
+    font-size: 20px;
+}   
+.div3 button{
+    width: 83%;
+    background-color: #a0e870;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
 }
 .div4{
     display: flex;
     flex-direction: column  ;
     align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }
 .div4 aside{
     width: 80%;
@@ -245,7 +265,34 @@ main input{
 background: linear-gradient(90deg, rgba(173, 216, 209, 1) 0%, rgba(118, 166, 158, 1) 13%, rgba(118, 144, 201, 1) 28%, rgba(163, 226, 87, 1) 43%, rgba(253, 210, 28, 1) 58%, rgba(248, 139, 59, 1) 72%, rgba(240, 120, 130, 1) 85%, rgba(227, 30, 36, 1) 98%);
     border-radius: 40px;    
 }
-
+.div5{
+display: flex;
+justify-content: center;
+width: 100%;
+border-radius: 10px;
+}
+.charts{
+    display: flex;
+    place-content: center;
+    flex-flow: wrap;
+    gap: 2rem;
+}
+#pieChart{
+    flex:1 0 225px;
+    max-width: 325px;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    background-image:
+    conic-gradient(
+    #a0e870  40%,
+    #459818 0 60% ,
+    #2a4e19 0 85%,
+    #e1f8cf 0  
+    );
+}
+.div6{
+    border-radius: 10px;
+}
 @media (max-width:870px){
     .container{
         display: flex;
@@ -257,3 +304,159 @@ background: linear-gradient(90deg, rgba(173, 216, 209, 1) 0%, rgba(118, 166, 158
         border-bottom: solid 1px white;
     }
 }
+
+@media (max-width: 870px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    header {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px;
+        box-shadow: none;
+    }
+
+    .header-top {
+        width: 100%;
+    }
+
+    .header-mid {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    article {
+        flex: 1 1 40%;
+        margin: 5px;
+        justify-content: center;
+    }
+
+    .logo-wrapper {
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .logo-wrapper img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .logo-wrapper h1 {
+        font-size: 18px;
+        margin-left: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .main-top {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .top2 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .top2 input {
+        width: 100%;
+    }
+
+    .login-wrapper {
+        justify-content: flex-start;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 768px) {
+    .main-rest {
+        width: 100%;
+        left: 0;
+        padding: 10px;
+    }
+
+    .parent {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .div1, .div2, .div3, .div4, .div5, .div6 {
+        width: 100%;
+    }
+
+    .scale {
+        width: 100%;
+    }
+
+    .div3 input {
+        width: 45%;
+    }
+
+    .div3 button {
+        width: 100%;
+    }
+
+    #pieChart {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .article h2 {
+        font-size: 11px;
+    }
+
+    .top1 {
+        padding: 10px;
+    }
+
+    .top1 h3 {
+        font-size: 14px;
+    }
+
+    .top2 input {
+        font-size: 14px;
+    }
+
+    .div1 p,
+    .div2 p,
+    .div3 p,
+    .div4 h1,
+    .div4 h2 {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .div3 input {
+        width: 100%;
+    }
+
+    .input-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input {
+    font-size: 16px;
+}
+

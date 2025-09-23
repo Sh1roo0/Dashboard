@@ -55,13 +55,13 @@ const weightInput = document.getElementById('weightInput');
       if (!isNaN(weight)) {
         weightDisplay.textContent = `${weight} kg`;
       } else {  
-        weightDisplay.textContent = "–";
+        weightDisplay.textContent = "0 kg";
       }
 
       if (!isNaN(height)) {
         heightDisplay.textContent = `${height} m`;
       } else {
-        heightDisplay.textContent = "–";
+        heightDisplay.textContent = "0 m";
       }
 
       // Oblicz BMI tylko jeśli dane są poprawne
@@ -77,6 +77,34 @@ const weightInput = document.getElementById('weightInput');
     weightInput.addEventListener('input', calculateBMI);
     heightInput.addEventListener('input', calculateBMI);
  
+     
+
+
+    const piesubmit = document.getElementById("pie-submit").onclick = function(){
+      
+    Pievalue1 = parseInt(document.getElementById("Pie-value1").value);
+     Pievalue2 = parseInt(document.getElementById("Pie-value2").value);
+     Pievalue3 = parseInt(document.getElementById("Pie-value3").value);
+     Pievalue4 = parseInt(document.getElementById("Pie-value4").value);
+
+      
+    // valuep1 = parseFloat(Pievalue1.value);
+    // valuep2 = parseFloat(Pievalue2.value);
+    // valuep3 = parseFloat(Pievalue3.value);
+    // valuep4 = parseFloat(Pievalue4.value);
+
+     console.log(Pievalue1,Pievalue2,Pievalue3,Pievalue4);
+    pieChart = document.getElementById("pieChart").style.backgroundImage = `conic-gradient(
+    #a0e870  90%,
+    #459818 0  30%,
+    #2a4e19 0 68%,
+    #e1f8cf 0 
+    );`
+    }
+
+    
+
+    
 
 
 
