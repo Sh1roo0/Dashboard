@@ -441,6 +441,25 @@ border-radius: 10px;
         display: flex;
         border-bottom: solid 1px white;
     }
+    .div6{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } 
+    .chart1{
+        width: 100%;
+        border-bottom: 2px white solid;
+        margin: 50px auto;
+    }  
+     .chart2{
+        width: 100%;
+        border-bottom: 2px white solid;
+        margin: 50px auto;
+    }  
+     .chart3{
+        width: 100%;
+        margin: 50px auto;
+    }  
 }
 
 @media (max-width: 870px) {
