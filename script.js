@@ -46,7 +46,23 @@ const weightInput = document.getElementById('weightInput');
     const heightDisplay = document.getElementById('heightDisplay');
     const bmiResult = document.getElementById('bmiResult');
 
+
+
+    
+
     function calculateBMI() {
+
+
+       const bmi1 = document.getElementById("bmi-1");
+    const bmi2 = document.getElementById("bmi-2");
+    const bmi3 = document.getElementById("bmi-3");
+    const bmi4 = document.getElementById("bmi-4");
+    const bmi5 = document.getElementById("bmi-5");
+    const bmi6 = document.getElementById("bmi-6");
+    const bmi7 = document.getElementById("bmi-7");
+    const bmi8 = document.getElementById("bmi-8");
+
+
 
       const weight = parseFloat(weightInput.value.replace(',', '.'));
       const height = parseFloat(heightInput.value.replace(',', '.'));
@@ -65,16 +81,27 @@ const weightInput = document.getElementById('weightInput');
       }
 
 
+
+
      const validInput = !isNaN(weight) && !isNaN(height) && height > 0;
 
       bmiResult.textContent = validInput
         ? (weight / (height ** 2)).toFixed(2)
         : "NaN";
+
+      
+
+        
     }
 
+
+
+   
+
+
  
-    weightInput.addEventListener('input', calculateBMI);
-    heightInput.addEventListener('input', calculateBMI);
+    weightInput.addEventListener('input', calculateBMI );
+    heightInput.addEventListener('input', calculateBMI );
  
      
 
