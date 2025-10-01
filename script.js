@@ -46,12 +46,28 @@ const weightInput = document.getElementById('weightInput');
     const heightDisplay = document.getElementById('heightDisplay');
     const bmiResult = document.getElementById('bmiResult');
 
+
+
+    
+
     function calculateBMI() {
-      // Zamień przecinki na kropki (jeśli wpisano "1,74")
+
+
+       const bmi1 = document.getElementById("bmi-1");
+    const bmi2 = document.getElementById("bmi-2");
+    const bmi3 = document.getElementById("bmi-3");
+    const bmi4 = document.getElementById("bmi-4");
+    const bmi5 = document.getElementById("bmi-5");
+    const bmi6 = document.getElementById("bmi-6");
+    const bmi7 = document.getElementById("bmi-7");
+    const bmi8 = document.getElementById("bmi-8");
+
+
+
       const weight = parseFloat(weightInput.value.replace(',', '.'));
       const height = parseFloat(heightInput.value.replace(',', '.'));
 
-      // Wyświetl aktualne wartości pod inputami
+
       if (!isNaN(weight)) {
         weightDisplay.textContent = `${weight} kg`;
       } else {  
@@ -64,29 +80,55 @@ const weightInput = document.getElementById('weightInput');
         heightDisplay.textContent = "0 m";
       }
 
-      // Oblicz BMI tylko jeśli dane są poprawne
-      if (!isNaN(weight) && !isNaN(height) && height > 0) {
-        const bmi = weight / (height * height);
-        bmiResult.textContent = bmi.toFixed(2);
-      } else {
-        bmiResult.textContent = "NaN";
-      }
+
+
+
+     const validInput = !isNaN(weight) && !isNaN(height) && height > 0;
+
+      bmiResult.textContent = validInput
+        ? (weight / (height ** 2)).toFixed(2)
+        : "NaN";
+
+      
+
+        
     }
 
-    // Obliczaj BMI i aktualizuj dane przy każdej zmianie
-    weightInput.addEventListener('input', calculateBMI);
-    heightInput.addEventListener('input', calculateBMI);
+
+
+   
+
+
+ 
+    weightInput.addEventListener('input', calculateBMI );
+    heightInput.addEventListener('input', calculateBMI );
  
      
 
 
     const piesubmit = document.getElementById("pie-submit").onclick = function(){
       
-    Pievalue1 = parseInt(document.getElementById("Pie-value1").value);
-     Pievalue2 = parseInt(document.getElementById("Pie-value2").value);
-     Pievalue3 = parseInt(document.getElementById("Pie-value3").value);
-     Pievalue4 = parseInt(document.getElementById("Pie-value4").value);
+    Pievalue1 = document.getElementById("Pie-value1").value;
+     Pievalue2 = document.getElementById("Pie-value2").value;
+     Pievalue3 = document.getElementById("Pie-value3").value;
+     Pievalue4 = document.getElementById("Pie-value4").value;
 
+     PieTab = [
+      {
+        Pievalue1
+      },
+      {
+        Pievalue2
+      },
+      {
+        Pievalue3
+      },
+      {
+        Pievalue4
+      }
+     ];
+
+     console.log(PieTab[0]);
       
     // valuep1 = parseFloat(Pievalue1.value);
     // valuep2 = parseFloat(Pievalue2.value);
@@ -179,10 +221,17 @@ const weightInput = document.getElementById('weightInput');
     
     ];
 
-    const piedonut = document.getElementById("piedonut");
+    const piedonut = document.getElementById("pieChart");
 
-    piedonut.style.backgroundImage = conic-gradient(
-    );
+    const pieSubmit = document.getElementById("pie-submi");
+
+    pieSubmit.onclick = function(){
+       piedonut.style.backgroundImage = `conic-gradient( #a0e870  ${PieTab[0]}%,#459818 0 ${PieDonut[1].value} , #2a4e19 0 ${PieDonut[2].value}, #e1f8cf 0  );`
+
+    }
+
+   
+
     
 
 

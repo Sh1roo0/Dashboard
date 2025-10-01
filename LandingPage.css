@@ -262,7 +262,8 @@ padding: 10px;
     height: 40px;
     background: #ADD8D1;
 background: linear-gradient(90deg, rgba(173, 216, 209, 1) 0%, rgba(118, 166, 158, 1) 13%, rgba(118, 144, 201, 1) 28%, rgba(163, 226, 87, 1) 43%, rgba(253, 210, 28, 1) 58%, rgba(248, 139, 59, 1) 72%, rgba(240, 120, 130, 1) 85%, rgba(227, 30, 36, 1) 98%);
-    border-radius: 40px;    
+    border-radius: 40px;
+    margin: 10px 0;    
 }
 .div5{
 display: flex;
@@ -430,6 +431,71 @@ border-radius: 10px;
     background-color: lightgray;
     margin: 20px auto;
 }
+.bmi-1{
+    width: 20px ;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 1;
+    
+}
+/* .bmi-2{
+    width: 20px ;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+        opacity: 0;
+}
+.bmi-3{
+    width: 20px ;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+        opacity: 0;
+}
+.bmi-4{
+    width: 20px ;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+        opacity: 0;
+}
+.bmi-5{
+    width: 20px ;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+        opacity: 0;
+}
+.bmi-6{
+    width: 20px ;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+        opacity: 0;
+}
+.bmi-7{
+    width: 20px ;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+        opacity: 0;
+}
+.bmi-8{
+    width: 20px ;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+        opacity: 0;
+} */
+.bmi-dot-wrapper {
+    display: flex;
+    position: relative;
+    margin-right: 40rem;
+}
+.bmi-dot-wrapper section{
+    margin: 0 40px;
+}
 
 @media (max-width:870px){
     .container{
@@ -441,6 +507,25 @@ border-radius: 10px;
         display: flex;
         border-bottom: solid 1px white;
     }
+    .div6{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } 
+    .chart1{
+        width: 100%;
+        border-bottom: 2px white solid;
+        margin: 50px auto;
+    }  
+     .chart2{
+        width: 100%;
+        border-bottom: 2px white solid;
+        margin: 50px auto;
+    }  
+     .chart3{
+        width: 100%;
+        margin: 50px auto;
+    }  
 }
 
 @media (max-width: 870px) {
