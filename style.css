@@ -1,0 +1,35 @@
+#com2{
+    height: 100px;
+    width: 100%;
+background-color: brown;
+font-size: xx-large;
+}
+#com3{
+height: 1300px;
+width: 20%;
+background-color: rgb(46, 165, 22);
+float: left;
+}
+#com4{
+    height: 1300px;
+    width: 60%;
+    background-color: blue;
+    float: right;
+    float: left;
+   
+    font-size: xx-large;
+}
+#com5{
+
+    height: 1300px;
+    width: 20%;
+    background-color: dimgray;
+    float: right;
+}
+#com6{
+    height: 100px;
+    width: 1889px;
+    background-color: darkblue;
+    float: right;
+    float: left; font-size: xx-large;
+}
